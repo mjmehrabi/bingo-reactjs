@@ -3,7 +3,8 @@ import { connect } from "react-redux"
 import { addMarkedNumber } from "../../action_creators/CellAction"
 function Cell(props: any) {
     const [marked, setMarked] = useState(false)
-    if(props.number === Math.ceil(props.size*props.size/2) && props.marked.find((element:number) => element === props.number) === undefined && !marked) {
+    const centerCell = props.number === Math.ceil(props.size*props.size/2);
+    if(centerCell && props.marked.find((element:number) => element === props.number) === undefined && !marked) {
         mark()
     }
     function mark() {
@@ -12,7 +13,7 @@ function Cell(props: any) {
         setMarked(true)
         props.addMarkedNumber(props.number)
     }
-    return <button className={"cell " + (marked ? "marked stroke" : "")} disabled={marked} type="button" onClick={mark}>{props.content}</button>
+    return <button className={"cell" + (marked ? " marked" + (!centerCell ? " stroke" : "") : "")} disabled={marked} type="button" onClick={mark}>{centerCell ? "Made With ❤️" : props.content}</button>
 }
 const mapDispatchToProps = {
     addMarkedNumber
