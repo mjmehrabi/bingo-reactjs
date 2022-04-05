@@ -31,6 +31,8 @@ body {
     background: #fff;
     transition: 0.3s;
     cursor: pointer;
+    border: 1px solid black;
+    border-radius: 4px;
 }
 .marked {
     cursor: not-allowed;
