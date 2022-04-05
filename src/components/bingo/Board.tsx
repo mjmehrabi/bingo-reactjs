@@ -7,7 +7,7 @@ function Board(props: any) {
     const [wonBingo, setWonBingo] = useState(0)
     const [animated, setAnimated] = useState(false)
     const initialRender = useRef(true)
-    const content = useRef(shuffle(['Let me share my screen with you.', 'I’m going to pull up my presentation.', 'Could you speak more slowly, please', 'Could you repeat that last bit, please?', 'Sorry, would you mind if I asked a question?', 'Just to clarify are you saying that…', 'Can I stop you for just one minute, please?', 'I am having trouble hearing you.', 'The screen is blank.', 'You’re breaking up a little bit.', 'There’s a bit of an echo on the line.', 'Let’s move on to the next item', 'In summary, we’re going to…', 'I think this is a good place to leave things today.', 'Welcome, everyone. This is our agenda. ', 'Are we good to go?', 'Ok, let’s kick off.', 'Is everybody ready to start?', 'I didn’t get that', 'Let’s pencil in another meeting for next Wednesday.', 'What have we done so far? ', 'What have we covered so far? ', 'Do you want me to make it bigger?', 'Welcome, everyone. Today’s meeting is about…', 'Let’s get the ball rolling', 'Could you repeat/explain that again?', 'The screen is frozen', 'Thank you all for attending', 'Welcome', 'Bye']))
+    const content = useRef(shuffle(['Let me share my screen with you.', 'I’m going to pull up my presentation.', 'Could you speak more slowly, please', 'Could you repeat that last bit, please?', 'Sorry, would you mind if I asked a question?', 'Just to clarify are you saying that…', 'Can I stop you for just one minute, please?', 'I am having trouble hearing you.', 'The screen is blank.', 'You’re breaking up a little bit.', 'There’s a bit of an echo on the line.', 'Let’s move on to the next item', 'In summary, we’re going to…', 'I think this is a good place to leave things', 'Welcome, everyone. This is our agenda. ', 'Are we good to go?', 'Ok, let’s kick off.', 'Is everybody ready to start?', 'I didn’t get that', 'Let’s pencil in another meeting for next Wednesday.', 'What have we done so far? ', 'What have we covered so far? ', 'Do you want me to make it bigger?', 'Welcome, everyone. Today’s meeting is about…', 'Let’s get the ball rolling', 'Could you repeat that again?', 'The screen is frozen', 'Thank you all for attending', 'Welcome', 'Bye']))
     const size = 5; // e.g. 5 means 5 x 5
     function shuffle(array:any) {
         let currentIndex = array.length,  randomIndex;
@@ -137,7 +137,7 @@ function Board(props: any) {
     }
     return(
         <>
-            <div className="bingo-info" id={(animated?"win":"")}>🏆 You Won {wonBingo}</div>
+            <div className="bingo-info" id={(animated?"win":"")}><span>🏆 You Won {wonBingo}</span></div>
             <div id="main">
                 {div}
             </div>

@@ -1,5 +1,5 @@
 * {
-    box-sizing: border-box;
+    box-sizing: border-box !important;
 }
 body {
     position: absolute;
@@ -7,10 +7,16 @@ body {
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+}
+#root {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 #main {
-    width: 50vw;
+    width: 50%;
     display: flex;
     flex-direction: column;
 }
@@ -35,8 +41,9 @@ body {
     text-decoration:line-through;
 }
 .bingo-info {
-    font-size: 2rem;
-    padding: 1.5em 0;
+    position: relative;
+    font-size: 16px;
+    padding: 4vw 0;
 }
 #win {
     animation-name: win;
@@ -44,13 +51,18 @@ body {
 }
 
 @keyframes win {
-    0% {font-size: 2em; color: gold;}
-    50% {font-size: 2.5em; color: gold;}
-    100% {font-size: 2em; color: gold;}
+    0% {left: 0%; color: gold;}
+    25% {left: -2%; color: gold;}
+    50% {left: 0%; color: gold;}
+    50% {left: 2%; color: gold;}
+    100% {left: 0%; color: gold;}
 }
 @media only screen and (max-width: 992px) {
     #main {
         width: 100%;
+    }
+    .bingo-info {
+        font-size: 16px;
     }
 }
 @media only screen and (max-width: 300px) {
