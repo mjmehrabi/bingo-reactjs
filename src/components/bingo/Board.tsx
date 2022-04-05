@@ -137,7 +137,7 @@ function Board(props: any) {
     }
     return(
         <>
-            <div id={(animated?"win":"")}>You Won {wonBingo}</div>
+            <div className="bingo-info" id={(animated?"win":"")}>🏆 You Won {wonBingo}</div>
             <div id="main">
                 {div}
             </div>

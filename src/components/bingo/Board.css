@@ -34,19 +34,23 @@ body {
     color: #000;
     text-decoration:line-through;
 }
+.bingo-info {
+    font-size: 2rem;
+    padding: 1.5em 0;
+}
 #win {
     animation-name: win;
     animation-duration: 2s;
 }
 
 @keyframes win {
-    0% {font-size: 1em}
-    50% {font-size: 2em;}
-    100% {font-size: 1em;}
+    0% {font-size: 2em; color: gold;}
+    50% {font-size: 2.5em; color: gold;}
+    100% {font-size: 2em; color: gold;}
 }
 @media only screen and (max-width: 992px) {
     #main {
-        width: 100vw;
+        width: 100%;
     }
 }
 @media only screen and (max-width: 300px) {
